@@ -33,7 +33,7 @@
 
   <body>
     <!--
-    - #MAIN
+    - #MAINS
   -->
 
     <main>
@@ -41,7 +41,7 @@
       - #SIDEBAR
     -->
 
-      <aside class="sidebar" data-sidebar>
+      <!-- <aside class="sidebar" data-sidebar>
         <div class="sidebar-info">
           <figure class="avatar-box">
             <img
@@ -91,7 +91,7 @@
                 <p class="contact-title">Phone</p>
 
                 <a href="tel:+4154944469" class="contact-link"
-                  >+1 (415) 494-4469</a
+                  >+1 (616) 405-0904</a
                 >
               </div>
             </li>
@@ -103,8 +103,17 @@
 
               <div class="contact-info">
                 <p class="contact-title">Age</p>
-                <time datetime="26">26</time>
-              </div>
+                <time id="age"></time>
+            </div>
+            
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    var birthday = new Date(1996, 11, 13); // JavaScript months are 0-indexed
+                    var age = Math.floor((new Date() - birthday) / (365.25 * 24 * 60 * 60 * 1000));
+                    document.getElementById('age').textContent = age;
+                });
+            </script>
+            
             </li>
 
             <li class="contact-item">
@@ -141,6 +150,32 @@
               </a>
             </li>
           </ul>
+        </div>
+      </aside> -->
+      <aside class="sidebar" data-sidebar>
+        <div class="sidebar-info">
+          <figure class="avatar-box">
+            <img
+              src="./assets/images/my-avatar.png"
+              alt="Marcus Wilson"
+              width="80"
+            />
+          </figure>
+
+          <div class="info-content">
+            <h1 class="name" title="Marcus Wilson">Marcus Wilson</h1>
+
+            <p class="title">Web developer</p>
+          </div>
+
+          <button class="info_more-btn" data-sidebar-btn>
+            <span>Show Contacts</span>
+
+            <ion-icon name="chevron-down"></ion-icon>
+          </button>
+        </div>
+
+        <div class="sidebar-info_more">
         </div>
       </aside>
 
@@ -495,45 +530,45 @@
 
             <ul class="clients-list has-scrollbar">
               <li class="clients-item">
-                <a href="#">
+                <a href="https://tulipcitycleaning.com" data-modal="true" class="modal-link">
                   <img
-                    src="./assets/images/logo-1-color.png"
+                    src="./assets/images/TCCLogoPort-2.webp"
+                    alt="Tulip City Cleaning logo"
+                  />
+                </a>
+              </li>
+
+              <li class="clients-item">
+                <a href="https://arizonaentrepreneurs.com">
+                  <img
+                    src="./assets/images/AZELogoPort.webp"
+                    alt="Arizona Entrepreneurs logo"
+                  />
+                </a>
+              </li>
+
+              <li class="clients-item">
+                <a href="https://communitylaunch.io">
+                  <img
+                    src="./assets/images/CLLogoPort.webp"
+                    alt="Community Launch logo"
+                  />
+                </a>
+              </li>
+
+              <li class="clients-item">
+                <a href="https://selfmadebarbers.com">
+                  <img
+                    src="./assets/images/SMB-Logo.webp"
                     alt="client logo"
                   />
                 </a>
               </li>
 
               <li class="clients-item">
-                <a href="#">
+                <a href="https://ahelpinghandmobiledetail.com">
                   <img
-                    src="./assets/images/logo-2-color.png"
-                    alt="client logo"
-                  />
-                </a>
-              </li>
-
-              <li class="clients-item">
-                <a href="#">
-                  <img
-                    src="./assets/images/logo-3-color.png"
-                    alt="client logo"
-                  />
-                </a>
-              </li>
-
-              <li class="clients-item">
-                <a href="#">
-                  <img
-                    src="./assets/images/logo-4-color.png"
-                    alt="client logo"
-                  />
-                </a>
-              </li>
-
-              <li class="clients-item">
-                <a href="#">
-                  <img
-                    src="./assets/images/logo-5-color.png"
+                    src="./assets/images/ahhmdLogo.webp"
                     alt="client logo"
                   />
                 </a>
@@ -550,6 +585,14 @@
             </ul>
           </section>
         </article>
+
+        <div id="iframeModal" class="modal">
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <iframe id="modalIframe" class="iframe" src="" frameborder="0"></iframe>
+          </div>
+        </div>
+        
 
         <!--
         - #RESUME
