@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
     "target": "esnext",
-    "lib": ["dom", "es6", "webworker"],
+    "module": "commonjs",
+    "lib": ["esnext", "es2020", "es2019", "es2018"], // Exclude "dom" and "webworker"
     "types": ["@cloudflare/workers-types"]
     // other options...
   }
