@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "outDir": "./dist",
     "target": "esnext",
     "module": "commonjs",
     "lib": ["esnext", "es2020", "es2019", "es2018"], // Exclude "dom" and "webworker"

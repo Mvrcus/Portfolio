@@ -3,12 +3,12 @@
   "version": "1.0.0",
   "description": "Portfolio of Marcus W",
   "main": "index.html",
+  "author": "Marcus W",
+  "license": "ISC",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc"
   },
-  "author": "Marcus W",
-  "license": "ISC",
   "dependencies": {
     "@cloudflare/pages-plugin-static-forms": "^1.0.1"
   },
