@@ -7,7 +7,7 @@
   "license": "ISC",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc"
+    "build": "tsc && cp *.html dist/ && cp -R assets/ dist/assets/"
   },
   "dependencies": {
     "@cloudflare/pages-plugin-static-forms": "^1.0.1"
