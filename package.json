@@ -4,7 +4,8 @@
   "description": "Portfolio of Marcus W",
   "main": "index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc"
   },
   "author": "Marcus W",
   "license": "ISC",
