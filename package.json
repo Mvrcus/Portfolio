@@ -1,0 +1,18 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "Portfolio of Marcus W",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Marcus W",
+  "license": "ISC",
+  "dependencies": {
+    "@cloudflare/pages-plugin-static-forms": "^1.0.1"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20240208.0",
+    "typescript": "^5.3.3"
+  }
+}

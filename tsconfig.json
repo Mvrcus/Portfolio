@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "esnext",
+    "lib": ["dom", "es6", "webworker"],
+    "types": ["@cloudflare/workers-types"]
+    // other options...
+  }
+}
