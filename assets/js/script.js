@@ -174,30 +174,6 @@ async function loadParticles(options) {
 
   // Load initial particles
   await tsParticles.load({ id: 'tsparticles', options });
-
-  // Function to decrease emission rate
-  function decreaseEmission() {
-    // Modify options to decrease the emission rate
-    options.emitters.forEach((emitter) => {
-      emitter.rate.quantity = Math.max(0, emitter.rate.quantity - 1);
-    });
-
-    // Reload particles with updated options
-    tsParticles.load({ id: 'tsparticles', options });
-  }
-
-  // Delay before starting to decrease emission
-  const delayBeforeDecrease = 2000; // Delay for 5 seconds before starting decrease
-
-  // Start decreasing emission after a delay
-  setTimeout(() => {
-    const decreaseInterval = setInterval(decreaseEmission, 250);
-
-    // Stop decreasing after an additional 3 seconds and clear the interval
-    setTimeout(() => {
-      clearInterval(decreaseInterval);
-    }, 3500);
-  }, delayBeforeDecrease);
 }
 
 const configs = {
@@ -321,6 +297,11 @@ const configs = {
           },
         },
       },
+      life: {
+        count: 1, // Emit particles only once
+        duration: 0.5,
+        delay: 0.4,
+      },
     },
     {
       direction: 'top-left',
@@ -343,6 +324,11 @@ const configs = {
             value: 60,
           },
         },
+      },
+      life: {
+        count: 1, // Emit particles only once
+        duration: 0.5,
+        delay: 0.4,
       },
     },
   ],
