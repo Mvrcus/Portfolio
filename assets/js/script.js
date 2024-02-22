@@ -133,7 +133,7 @@ function toTitleCase(str) {
 }
 
 // New handleSubmit function with a different variable name
-function handleSubmit(event) {
+async function handleSubmit(event) {
   event.preventDefault(); // Prevent default form submission
 
   const contactForm = event.currentTarget;
@@ -162,6 +162,29 @@ style="fill:#40C057;">
 
   // Trigger the confetti
   loadParticles(configs);
+
+  // Make an asynchronous request to your Cloudflare Workers function
+  try {
+    const response = await fetch('http://marcustwilson.com/functions/formSub', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        name: fullName, // Adjust the field name if needed
+        email: contactForm.querySelector('input[name="email"]').value,
+        message: contactForm.querySelector('textarea[name="message"]').value,
+      }),
+    });
+
+    if (response.ok) {
+      console.log('Data submitted to the database successfully');
+    } else {
+      console.error('Error submitting data to the database');
+    }
+  } catch (error) {
+    console.error('Error:', error);
+  }
 }
 
 // Attach the handleSubmit event listener to the existing 'form' variable
