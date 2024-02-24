@@ -169,11 +169,6 @@ style="fill:#40C057;">
   try {
     const response = await fetch('https://airtable-form-handler.mdub-it.workers.dev/submit', {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      
-    mode: 'cors', // Ensure CORS mode is used
       body: JSON.stringify({
         fields: {
           "Full Name": fullName,
