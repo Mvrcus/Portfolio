@@ -137,9 +137,11 @@ async function handleSubmit(event) {
   event.preventDefault(); // Prevent default form submission
 
   const contactForm = event.currentTarget;
-  let fullName = contactForm.querySelector('input[name="fullname"]').value;
+  let fullName = document.querySelector('input[name="fullname"]').value;
   fullName = toTitleCase(fullName);
 
+  const email = document.querySelector('input[name="email"]').value;
+  const message = document.querySelector('textarea[name="message"]').value;
   // Hide sections
   document.querySelector('.mapbox').style.display = 'none';
   document.querySelector('.contact-form').style.display = 'none';
@@ -171,9 +173,11 @@ style="fill:#40C057;">
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        name: fullName, // Adjust the field name if needed
-        email: contactForm.querySelector('input[name="email"]').value,
-        message: contactForm.querySelector('textarea[name="message"]').value,
+        fields: {
+          "Full Name": fullName,
+          "Email": email,
+          "Message": message
+        }
       }),
     });
 
