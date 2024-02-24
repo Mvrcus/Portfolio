@@ -170,7 +170,7 @@ style="fill:#40C057;">
     const response = await fetch('https://airtable-form-handler.mdub-it.workers.dev/submit', {
       method: 'POST',
       headers: {
-        'Content-Type': 'multipart/form-data',
+        'Content-Type': 'application/json',
       },
       
     mode: 'cors', // Ensure CORS mode is used
