@@ -165,13 +165,6 @@ style="fill:#40C057;">
   // Trigger the confetti
   loadParticles(configs);
 
-
-  // Construct FormData
-  const formData = new FormData();
-  formData.append("Full Name", fullName);
-  formData.append("Email", email);
-  formData.append("Message", message);
-
   // Make an asynchronous request to your Cloudflare Workers function
   try {
     const response = await fetch('https://airtable-form-handler.mdub-it.workers.dev/submit', {
@@ -181,7 +174,13 @@ style="fill:#40C057;">
       },
       
     mode: 'cors', // Ensure CORS mode is used
-      body: formData,
+      body: JSON.stringify({
+        fields: {
+          "Full Name": fullName,
+          "Email": email,
+          "Message": message
+        }
+      }),
     });
 
     if (response.ok) {
