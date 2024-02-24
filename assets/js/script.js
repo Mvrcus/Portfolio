@@ -172,6 +172,8 @@ style="fill:#40C057;">
       headers: {
         'Content-Type': 'application/json',
       },
+      
+    mode: 'cors', // Ensure CORS mode is used
       body: JSON.stringify({
         fields: {
           "Full Name": fullName,
