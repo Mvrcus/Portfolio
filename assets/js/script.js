@@ -174,10 +174,13 @@ style="fill:#40C057;">
 
   // Make an asynchronous request to your Cloudflare Workers function
   try {
-    const response = await fetch('https://marcustwilson.com/form/submit', {
-      method: 'POST',
-      body: formData, // Send FormData object
-    });
+    const response = await fetch(
+      'https://airtable-form-handler.mdub-it.workers.dev/submit',
+      {
+        method: 'POST',
+        body: formData, // Send FormData object
+      }
+    );
 
     if (response.ok) {
       console.log('Data submitted to the database successfully');
