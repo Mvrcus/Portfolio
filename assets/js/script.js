@@ -174,7 +174,7 @@ style="fill:#40C057;">
 
   // Make an asynchronous request to your Cloudflare Workers function
   try {
-    const response = await fetch('https://marcustwilson.com/form/submit', {
+    const response = await fetch('form.marcustwilson.com/submit', {
       method: 'POST',
       body: formData, // Send FormData object
     });
