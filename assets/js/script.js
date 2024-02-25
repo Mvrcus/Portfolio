@@ -142,6 +142,13 @@ async function handleSubmit(event) {
 
   const email = document.querySelector('input[name="email"]').value;
   const message = document.querySelector('textarea[name="message"]').value;
+
+  // Create FormData object
+  const formData = new FormData();
+  formData.append('fullname', fullName);
+  formData.append('email', email);
+  formData.append('message', message);
+
   // Hide sections
   document.querySelector('.mapbox').style.display = 'none';
   document.querySelector('.contact-form').style.display = 'none';
@@ -169,16 +176,7 @@ style="fill:#40C057;">
   try {
     const response = await fetch('https://marcustwilson.com/form/submit', {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        fields: {
-          fullname: fullName,
-          email: email,
-          message: message,
-        },
-      }),
+      body: formData, // Send FormData object
     });
 
     if (response.ok) {
