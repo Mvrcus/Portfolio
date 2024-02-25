@@ -167,13 +167,11 @@ style="fill:#40C057;">
 
   // Make an asynchronous request to your Cloudflare Workers function
   try {
-    const response = await fetch('/submitform', {
+    const response = await fetch('/form/submit', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-
-      mode: 'cors', // Ensure CORS mode is used
       body: JSON.stringify({
         fields: {
           fullname: fullName,
