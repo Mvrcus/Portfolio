@@ -121,76 +121,76 @@ for (let i = 0; i < formInputs.length; i++) {
   });
 }
 
-// //Name formatting
-// function toTitleCase(str) {
-//   return str
-//     .toLowerCase()
-//     .split(' ')
-//     .map(function (word) {
-//       return word.charAt(0).toUpperCase() + word.slice(1);
-//     })
-//     .join(' ');
-// }
+//Name formatting
+function toTitleCase(str) {
+  return str
+    .toLowerCase()
+    .split(' ')
+    .map(function (word) {
+      return word.charAt(0).toUpperCase() + word.slice(1);
+    })
+    .join(' ');
+}
 
-// // New handleSubmit function with a different variable name
-// async function handleSubmit(event) {
-//   event.preventDefault(); // Prevent default form submission
+// New handleSubmit function with a different variable name
+async function handleSubmit(event) {
+  event.preventDefault(); // Prevent default form submission
 
-//   const contactForm = event.currentTarget;
-//   let fullName = document.querySelector('input[name="fullname"]').value;
-//   fullName = toTitleCase(fullName);
+  const contactForm = event.currentTarget;
+  let fullName = document.querySelector('input[name="fullname"]').value;
+  fullName = toTitleCase(fullName);
 
-//   const email = document.querySelector('input[name="email"]').value;
-//   const message = document.querySelector('textarea[name="message"]').value;
+  const email = document.querySelector('input[name="email"]').value;
+  const message = document.querySelector('textarea[name="message"]').value;
 
-//   // Create FormData object
-//   const formData = new FormData();
-//   formData.append('fullname', fullName);
-//   formData.append('email', email);
-//   formData.append('message', message);
+  // Create FormData object
+  const formData = new FormData();
+  formData.append('fullname', fullName);
+  formData.append('email', email);
+  formData.append('message', message);
 
-//   // Hide sections
-//   document.querySelector('.mapbox').style.display = 'none';
-//   document.querySelector('.contact-form').style.display = 'none';
+  // Hide sections
+  document.querySelector('.mapbox').style.display = 'none';
+  document.querySelector('.contact-form').style.display = 'none';
 
-//   // Add message in a new section
-//   const messageSection = document.createElement('section');
-//   messageSection.className = 'form-success';
-//   messageSection.innerHTML = `<div class="confetti-wrapper">
-//   <svg class="success-icon" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0,0,256,256"
-// style="fill:#40C057;">
-// <g fill="#40c057" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(8.53333,8.53333)"><path d="M15,3c-6.627,0 -12,5.373 -12,12c0,6.627 5.373,12 12,12c6.627,0 12,-5.373 12,-12c0,-2.17938 -0.59,-4.21686 -1.60547,-5.97852l-11.24805,11.24609c-0.187,0.187 -0.44103,0.29297 -0.70703,0.29297c-0.265,0 -0.52003,-0.10497 -0.70703,-0.29297l-4.45313,-4.45312c-0.391,-0.391 -0.391,-1.02306 0,-1.41406c0.391,-0.391 1.02306,-0.391 1.41406,0l3.74609,3.74609l10.80078,-10.80078c-2.201,-2.655 -5.52223,-4.3457 -9.24023,-4.3457zM24.24023,7.3457c0.43165,0.52058 0.81351,1.08435 1.1543,1.67383l2.3125,-2.3125c0.391,-0.392 0.391,-1.02306 0,-1.41406c-0.391,-0.391 -1.02306,-0.391 -1.41406,0z"></path></g></g>
-// </svg>
-// </div><p>Hello, ${fullName}! Thank you for submitting the contact form.</p>`;
+  // Add message in a new section
+  const messageSection = document.createElement('section');
+  messageSection.className = 'form-success';
+  messageSection.innerHTML = `<div class="confetti-wrapper">
+  <svg class="success-icon" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0,0,256,256"
+style="fill:#40C057;">
+<g fill="#40c057" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(8.53333,8.53333)"><path d="M15,3c-6.627,0 -12,5.373 -12,12c0,6.627 5.373,12 12,12c6.627,0 12,-5.373 12,-12c0,-2.17938 -0.59,-4.21686 -1.60547,-5.97852l-11.24805,11.24609c-0.187,0.187 -0.44103,0.29297 -0.70703,0.29297c-0.265,0 -0.52003,-0.10497 -0.70703,-0.29297l-4.45313,-4.45312c-0.391,-0.391 -0.391,-1.02306 0,-1.41406c0.391,-0.391 1.02306,-0.391 1.41406,0l3.74609,3.74609l10.80078,-10.80078c-2.201,-2.655 -5.52223,-4.3457 -9.24023,-4.3457zM24.24023,7.3457c0.43165,0.52058 0.81351,1.08435 1.1543,1.67383l2.3125,-2.3125c0.391,-0.392 0.391,-1.02306 0,-1.41406c-0.391,-0.391 -1.02306,-0.391 -1.41406,0z"></path></g></g>
+</svg>
+</div><p>Hello, ${fullName}! Thank you for submitting the contact form.</p>`;
 
-//   const contactFormSection = document.querySelector('.contact-form');
-//   contactFormSection.parentNode.insertBefore(
-//     messageSection,
-//     contactFormSection.nextSibling
-//   );
+  const contactFormSection = document.querySelector('.contact-form');
+  contactFormSection.parentNode.insertBefore(
+    messageSection,
+    contactFormSection.nextSibling
+  );
 
-//   // Trigger the confetti
-//   loadParticles(configs);
+  // Trigger the confetti
+  loadParticles(configs);
 
-//   // Make an asynchronous request to your Cloudflare Workers function
-//   try {
-//     const response = await fetch('https://form.marcustwilson.com/submit', {
-//       method: 'POST',
-//       body: formData, // Send FormData object
-//     });
+  // Make an asynchronous request to your Cloudflare Workers function
+  try {
+    const response = await fetch('https://form.marcustwilson.com/submit', {
+      method: 'POST',
+      body: formData, // Send FormData object
+    });
 
-//     if (response.ok) {
-//       console.log('Data submitted to the database successfully');
-//     } else {
-//       console.error('Error submitting data to the database');
-//     }
-//   } catch (error) {
-//     console.error('Error:', error);
-//   }
-// }
+    if (response.ok) {
+      console.log('Data submitted to the database successfully');
+    } else {
+      console.error('Error submitting data to the database');
+    }
+  } catch (error) {
+    console.error('Error:', error);
+  }
+}
 
-// // Attach the handleSubmit event listener to the existing 'form' variable
-// form.addEventListener('submit', handleSubmit);
+// Attach the handleSubmit event listener to the existing 'form' variable
+form.addEventListener('submit', handleSubmit);
 
 //CONFETTI
 
