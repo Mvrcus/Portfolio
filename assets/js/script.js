@@ -192,31 +192,6 @@ for (let i = 0; i < filterBtn.length; i++) {
 // // Attach the handleSubmit event listener to the existing 'form' variable
 // form.addEventListener('submit', handleSubmit);
 
-//Watch for iframe load
-// In your main site
-const iframe = document.getElementById('inline-tYd2IqLarnbMuztxQFQ7');
-
-iframe.onload = function () {
-  try {
-    const iframeURL = new URL(iframe.contentWindow.location.href);
-    if (
-      iframeURL.pathname === '/success' &&
-      iframeURL.searchParams.get('form') === 'submitted'
-    ) {
-      // Call the function you want to execute after form submission
-      loadParticles(configs); // Replace with your actual function
-      // Hide sections
-      document.querySelector('.mapbox').style.display = 'none';
-      document.querySelector('.contact-form').style.display = 'none';
-    }
-  } catch (error) {
-    console.error(
-      'Cross-origin policy might be preventing access to iframe URL:',
-      error
-    );
-  }
-};
-
 //CONFETTI
 
 async function loadParticles(options) {
@@ -383,6 +358,35 @@ const configs = {
     },
   ],
 };
+
+//onpage load nav //for form submisssion response
+document.addEventListener('DOMContentLoaded', function () {
+  // Parse the current URL
+  const url = new URL(window.location.href);
+
+  // Check if the URL path is '/success' and the 'form' query parameter is 'submitted'
+  if (
+    url.pathname === '/success' &&
+    url.searchParams.get('form') === 'submitted'
+  ) {
+    // Find the Contact navigation link and the Contact page content
+    const contactNavLink = document.querySelector('[data-nav-link="Contact"]');
+    const contactPage = document.querySelector('[data-page="contact"]');
+
+    // Activate the Contact navigation link
+    if (contactNavLink) {
+      contactNavLink.classList.add('active');
+    }
+
+    // Show the Contact page content
+    if (contactPage) {
+      contactPage.classList.add('active');
+    }
+
+    // Scroll to the top of the page
+    window.scrollTo(0, 0);
+  }
+});
 
 // page navigation variables
 const navigationLinks = document.querySelectorAll('[data-nav-link]');
