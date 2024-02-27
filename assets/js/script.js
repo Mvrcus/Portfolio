@@ -371,6 +371,8 @@ document.addEventListener('DOMContentLoaded', function () {
   ) {
     const contactPage = document.querySelector('article[data-page="contact"]');
     const mainPage = document.querySelector('article.active'); // This selects the currently active main article
+    const contactNavLink = document.querySelector('[data-nav-link="Contact"]');
+    const activeNavLink = document.querySelector('.navbar-link.active');
 
     // Add 'active' class to contact page and remove it from the currently active main page
     if (contactPage && mainPage) {
@@ -378,10 +380,7 @@ document.addEventListener('DOMContentLoaded', function () {
       mainPage.classList.remove('active');
     }
 
-    // Optional: Update the navigation link state if needed
-    const contactNavLink = document.querySelector('[data-nav-link="contact"]');
-    const activeNavLink = document.querySelector('.navbar-link.active');
-
+    // Update the navigation link state
     if (contactNavLink && activeNavLink) {
       contactNavLink.classList.add('active');
       activeNavLink.classList.remove('active');
