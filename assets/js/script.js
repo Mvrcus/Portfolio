@@ -364,27 +364,28 @@ document.addEventListener('DOMContentLoaded', function () {
   // Parse the current URL
   const url = new URL(window.location.href);
 
-  // Check if the URL path is '/success' and the 'form' query parameter is 'submitted'
+  // Check if URL pathname is '/success' and URL parameter 'form' is 'submitted'
   if (
     url.pathname === '/success' &&
     url.searchParams.get('form') === 'submitted'
   ) {
-    // Find the Contact navigation link and the Contact page content
-    const contactNavLink = document.querySelector('[data-nav-link="Contact"]');
-    const contactPage = document.querySelector('[data-page="contact"]');
+    const contactPage = document.querySelector('article[data-page="contact"]');
+    const mainPage = document.querySelector('article.active'); // This selects the currently active main article
 
-    // Activate the Contact navigation link
-    if (contactNavLink) {
-      contactNavLink.classList.add('active');
-    }
-
-    // Show the Contact page content
-    if (contactPage) {
+    // Add 'active' class to contact page and remove it from the currently active main page
+    if (contactPage && mainPage) {
       contactPage.classList.add('active');
+      mainPage.classList.remove('active');
     }
 
-    // Scroll to the top of the page
-    window.scrollTo(0, 0);
+    // Optional: Update the navigation link state if needed
+    const contactNavLink = document.querySelector('[data-nav-link="contact"]');
+    const activeNavLink = document.querySelector('.navbar-link.active');
+
+    if (contactNavLink && activeNavLink) {
+      contactNavLink.classList.add('active');
+      activeNavLink.classList.remove('active');
+    }
   }
 });
 
