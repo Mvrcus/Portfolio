@@ -536,7 +536,7 @@ main {
 }
 
 .expanded {
-  -webkit-line-clamp: none !important; /* Removes the line clamp when class is added */
+  -webkit-line-clamp: initial !important; /* Removes the line clamp when class is added */
 }
 
 /* Optional: Style for the toggle button */
