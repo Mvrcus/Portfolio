@@ -541,6 +541,12 @@ main {
   }
 }
 
+@media (max-width: 441px) {
+  .about-text p {
+    -webkit-line-clamp: 5; /* Adjust the number of lines as needed */
+  }
+}
+
 .expanded {
   -webkit-line-clamp: initial !important; /* Removes the line clamp when class is added */
 }
