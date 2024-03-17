@@ -2101,6 +2101,7 @@ textarea.form-input::-webkit-resizer {
     255,
     0.5
   ); /* Set the background color and opacity for the hazy gloss */
+  -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px); /* Apply a blur effect for the hazy look */
   z-index: 0; /* Ensure the gloss appears behind the text */
   border-radius: 20px; /* Add a border radius for a smudged effect */
