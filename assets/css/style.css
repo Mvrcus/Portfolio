@@ -529,7 +529,26 @@ main {
 }
 
 .about-text p {
-  margin-bottom: 15px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 6; /* Adjust the number of lines as needed */
+  overflow: hidden;
+}
+
+.expanded {
+  -webkit-line-clamp: none !important; /* Removes the line clamp when class is added */
+}
+
+/* Optional: Style for the toggle button */
+#toggleButton {
+  float: right;
+  color: var(--white-1);
+  background: var(--onyx);
+  font-size: var(--fs-8);
+  font-weight: var(--fw-300);
+  width: max-content;
+  padding: 3px 12px;
+  border-radius: 8px;
 }
 
 /**

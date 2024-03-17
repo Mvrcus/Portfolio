@@ -105,6 +105,17 @@ for (let i = 0; i < filterBtn.length; i++) {
   });
 }
 
+//Read more button
+document.getElementById('toggleButton').addEventListener('click', function () {
+  var paragraphs = document.querySelectorAll('.about-text p');
+  paragraphs.forEach((paragraph) => {
+    paragraph.classList.toggle('expanded');
+  });
+
+  this.textContent =
+    this.textContent === 'Read More' ? 'Read Less' : 'Read More';
+});
+
 // // Existing code for form inputs
 // const form = document.querySelector('[data-form]');
 // const formInputs = document.querySelectorAll('[data-form-input]');
