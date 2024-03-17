@@ -2076,16 +2076,24 @@ textarea.form-input::-webkit-resizer {
 }
 
 .coming-soon::before {
-  content: 'Coming Soon';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 55px; /* Adjust the font size as desired */
-  color: #fff; /* Set the text color */
-  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Add a text shadow for smudged effect */
-  z-index: 1; /* Ensure the text appears on top */
+  position: fixed;
   border-radius: 20px; /* Add a border radius for a smudged effect */
+}
+
+.coming-soon-text {
+  position: relative;
+  text-align: center; /* Center text horizontally */
+  font-size: 55px;
+  color: #fff;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  z-index: 1;
+  white-space: nowrap;
+}
+
+@media (max-width: 746px) {
+  .coming-soon-text {
+    font-size: 7vw; /* Reduced font size */
+  }
 }
 
 .coming-soon::after {
