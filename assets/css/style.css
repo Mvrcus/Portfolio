@@ -810,7 +810,7 @@ main {
 }
 
 /*-----------------------------------*\
-  #RESUME
+  #My Work
 \*-----------------------------------*/
 
 .article-title {
@@ -1124,7 +1124,6 @@ main {
   height: 100%;
   box-shadow: var(--shadow-4);
   border-radius: 16px;
-  z-index: 1;
 }
 
 .blog-post-item > a::before {
@@ -1132,8 +1131,8 @@ main {
   position: absolute;
   inset: 1px;
   border-radius: inherit;
-  background: var(--eerie-black-1);
-  z-index: -1;
+  /* background: var(--eerie-black-1); */
+  z-index: 0;
 }
 
 .blog-banner-box {
@@ -1650,7 +1649,7 @@ textarea.form-input::-webkit-resizer {
   }
 
   /**
-   * #RESUME
+   * #My Work
    */
 
   .timeline-list {
@@ -2064,10 +2063,45 @@ textarea.form-input::-webkit-resizer {
   }
 
   /**
-	 * RESUME
+	 * My Work
 	 */
 
   .timeline-text {
     max-width: 700px;
   }
+}
+
+.coming-soon {
+  position: relative;
+}
+
+.coming-soon::before {
+  content: 'Coming Soon';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 55px; /* Adjust the font size as desired */
+  color: #fff; /* Set the text color */
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Add a text shadow for smudged effect */
+  z-index: 1; /* Ensure the text appears on top */
+  border-radius: 20px; /* Add a border radius for a smudged effect */
+}
+
+.coming-soon::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(
+    255,
+    255,
+    255,
+    0.5
+  ); /* Set the background color and opacity for the hazy gloss */
+  backdrop-filter: blur(5px); /* Apply a blur effect for the hazy look */
+  z-index: 0; /* Ensure the gloss appears behind the text */
+  border-radius: 20px; /* Add a border radius for a smudged effect */
 }

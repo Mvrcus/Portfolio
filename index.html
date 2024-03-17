@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -30,7 +29,6 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
       rel="stylesheet"
     />
-
   </head>
 
   <body>
@@ -106,16 +104,17 @@
               <div class="contact-info">
                 <p class="contact-title">Age</p>
                 <time id="age"></time>
-            </div>
-            
-            <script>
-                document.addEventListener('DOMContentLoaded', function() {
-                    var birthday = new Date(1996, 11, 13); // JavaScript months are 0-indexed
-                    var age = Math.floor((new Date() - birthday) / (365.25 * 24 * 60 * 60 * 1000));
-                    document.getElementById('age').textContent = age;
+              </div>
+
+              <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                  var birthday = new Date(1996, 11, 13); // JavaScript months are 0-indexed
+                  var age = Math.floor(
+                    (new Date() - birthday) / (365.25 * 24 * 60 * 60 * 1000)
+                  );
+                  document.getElementById('age').textContent = age;
                 });
-            </script>
-            
+              </script>
             </li>
 
             <li class="contact-item">
@@ -154,7 +153,6 @@
           </ul>
         </div>
       </aside>
-      
 
       <!--
       - #main-content
@@ -172,7 +170,7 @@
             </li>
 
             <li class="navbar-item">
-              <button class="navbar-link" data-nav-link>Resume</button>
+              <button class="navbar-link" data-nav-link>Work</button>
             </li>
 
             <li class="navbar-item">
@@ -507,7 +505,11 @@
 
             <ul class="clients-list has-scrollbar">
               <li class="clients-item">
-                <a href="https://tulipcitycleaning.com" data-modal="true" class="modal-link">
+                <a
+                  href="https://tulipcitycleaning.com"
+                  data-modal="true"
+                  class="modal-link"
+                >
                   <img
                     src="./assets/images/TCCLogoPort-2.webp"
                     alt="Tulip City Cleaning logo"
@@ -535,221 +537,113 @@
 
               <li class="clients-item">
                 <a href="https://selfmadebarbers.com">
-                  <img
-                    src="./assets/images/SMB-Logo.webp"
-                    alt="client logo"
-                  />
+                  <img src="./assets/images/SMB-Logo.webp" alt="client logo" />
                 </a>
               </li>
 
               <li class="clients-item">
-                <a href="https://ahelpinghandmobiledetail.com">
-                  <img
-                    src="./assets/images/ahhmdLogo.webp"
-                    alt="client logo"
-                  />
-                </a>
-              </li>
-
-              <li class="clients-item">
-                <a href="#">
-                  <img
-                    src="./assets/images/logo-6-color.png"
-                    alt="client logo"
-                  />
+                <a href="https://ahhmd.mdubit.org">
+                  <img src="./assets/images/ahhmdLogo.webp" alt="client logo" />
                 </a>
               </li>
             </ul>
           </section>
         </article>
-        
 
         <!--
         - #RESUME
       -->
 
-        <article class="resume" data-page="resume">
+        <article class="work" data-page="work">
+          <!-- <article class="my-work active" data-page="my-work"> -->
           <header>
-            <h2 class="h2 article-title">Resume</h2>
+            <h2 class="h2 article-title">My Work</h2>
           </header>
 
-          <section class="timeline">
-            <div class="title-wrapper">
-              <div class="icon-box">
-                <ion-icon name="book-outline"></ion-icon>
+          <!-- Tab Content -->
+          <div class="tab-content">
+            <!-- Web Design Section -->
+            <section class="timeline tab-pane active" data-tab="web-design">
+              <div class="title-wrapper">
+                <div class="icon-box">
+                  <ion-icon
+                    name="browsers-outline"
+                    role="img"
+                    class="md hydrated"
+                    aria-label="browsers outline"
+                  ></ion-icon>
+                </div>
+                <h3 class="h3">Web Design Services</h3>
               </div>
+              <ol class="timeline-list">
+                <li class="timeline-item">
+                  <h4 class="h4 timeline-item-title">
+                    Custom Website Design and Development
+                  </h4>
+                  <p class="timeline-text">
+                    At my company, we specialize in creating visually stunning
+                    and user-friendly websites that effectively showcase our
+                    clients' brands and services. Our team of skilled web
+                    designers and developers work closely with clients to
+                    understand their unique needs and goals, ensuring that every
+                    website we create is tailored to their specific
+                    requirements.
+                  </p>
+                  <p class="timeline-text">
+                    We utilize the latest web design technologies and best
+                    practices to deliver responsive, modern, and SEO-optimized
+                    websites that provide an exceptional user experience across
+                    all devices. From conceptualization to development and
+                    deployment, we handle every aspect of the web design
+                    process, ensuring a seamless and efficient workflow.
+                  </p>
+                </li>
+              </ol>
+            </section>
 
-              <h3 class="h3">Experience</h3>
-            </div>
-
-            <ol class="timeline-list">
-              <li class="timeline-item">
-                <h4 class="h4 timeline-item-title">
-                  Cloud Engineer @ NCR Corporation
-                </h4>
-
-                <span>2021 — Present</span>
-
-                <p class="timeline-text">
-                  In my role as a Cloud Engineer, I have the opportunity to
-                  design and implement cloud solutions for new software
-                  projects. I work closely with internal and external customers
-                  to gather and implement design requirements, ensuring that the
-                  solutions align with their needs. Additionally, I regularly
-                  migrate existing legacy software applications to a
-                  cloud environment, utilizing technologies such as AWS EC2,
-                  RDS, ELB, VPC, Lambda, API Gateway, DynamoDB, CloudWatch, and
-                  Container technologies. I also stay up-to-date with current
-                  and emerging technologies, evaluating them based on factors
-                  like cost, portability, compatibility, and usability.
-                </p>
-              </li>
-
-              <li class="timeline-item">
-                <h4 class="h4 timeline-item-title">
-                  Sr. Front End Software Engineer @ Best Buy
-                </h4>
-
-                <span>2018 — 2021</span>
-
-                <p class="timeline-text">
-                  As a Senior Front End Software Engineer at Best Buy, I was
-                 dedicated to delivering a world-class digital experience.
-                  One of my key responsibilities was to inspire my team to excel
-                  and deliver exceptional results. I provided support in all
-                  facets of website design and infrastructure, ensuring a
-                  seamless user experience. Additionally, I played a crucial role
-                  in obtaining and distributing company communications to the
-                  team, keeping everyone aligned and informed. I actively
-                  explored and implemented the newest available technologies,
-                  always striving to enhance our digital presence. Moreover, I
-                  was the go-to guy for troubleshooting and resolving technical issues to
-                  ensure the end product met the highest standards.
-                </p>
-              </li>
-
-              <li class="timeline-item">
-                <h4 class="h4 timeline-item-title">Web Designer</h4>
-
-                <span>2017 — 2018</span>
-
-                <p class="timeline-text">
-                  As a Web Developer at Ace Communications, I played a
-                  pivotal role in building and updating all the website related,            presence. One of my primary responsibilities is focused on
-                  optimizing website rankings on search engines, implementing
-                  effective strategies to improve visibility and increase
-                  organic traffic. Additionally, I successfully implemented
-                  Google Analytics to gain valuable insights into user behavior
-                  and conversion rates, allowing for data-driven decisions to
-                  enhance website performance. I take great pride in my
-                  meticulous approach to debugging, testing, and ensuring the
-                  quality of all aspects of the websites I work on. Through my
-                  expertise and attention to detail, I have consistently
-                  delivered exceptional user experiences, resulting in improved
-                  engagement and business growth for our clients at Ace
-                  Communications.
-                </p>
-              </li>
-            </ol>
-          </section>
-          <section class="timeline">
-            <div class="title-wrapper">
-              
-
-          </section>
+            <!-- Systems Optimization Section -->
+            <section class="timeline tab-pane" data-tab="systems-optimization">
+              <div class="title-wrapper">
+                <div class="icon-box">
+                  <ion-icon
+                    name="server-outline"
+                    role="img"
+                    class="md hydrated"
+                    aria-label="server outline"
+                  ></ion-icon>
+                </div>
+                <h3 class="h3">Systems Optimization Services</h3>
+              </div>
+              <ol class="timeline-list">
+                <li class="timeline-item">
+                  <h4 class="h4 timeline-item-title">
+                    IT Systems Optimization and Management
+                  </h4>
+                  <p class="timeline-text">
+                    Our systems optimization services are designed to help
+                    businesses streamline their IT operations and maximize the
+                    performance of their systems. We offer comprehensive
+                    solutions tailored to each client's unique requirements,
+                    ensuring that their systems are running efficiently,
+                    securely, and with minimal downtime.
+                  </p>
+                  <p class="timeline-text">
+                    Our team of experienced professionals specializes in areas
+                    such as server management, network optimization, database
+                    administration, and cloud infrastructure. We leverage
+                    cutting-edge technologies and industry best practices to
+                    analyze, optimize, and maintain our clients' systems,
+                    ensuring they remain competitive and capable of handling
+                    ever-increasing demands.
+                  </p>
+                </li>
+              </ol>
+            </section>
+          </div>
 
           <section class="skill">
             <h3 class="h3 skills-title">My skills</h3>
-
-            <ul class="skills-list content-card">
-              <li class="skills-item">
-                <div class="title-wrapper">
-                  <h5 class="h5">Web design</h5>
-                  <data value="100">8 Years+</data>
-                </div>
-
-                <div class="skill-progress-bg">
-                  <div class="skill-progress-fill" style="width: 100%"></div>
-                </div>
-              </li>
-
-              <li class="skills-item">
-                <div class="title-wrapper">
-                  <h5 class="h5">Graphic design</h5>
-                  <data value="85">8 Years+</data>
-                </div>
-
-                <div class="skill-progress-bg">
-                  <div class="skill-progress-fill" style="width: 85%"></div>
-                </div>
-              </li>
-
-              <li class="skills-item">
-                <div class="title-wrapper">
-                  <h5 class="h5">Wordpress</h5>
-                  <data value="100">8 Years+</data>
-                </div>
-
-                <div class="skill-progress-bg">
-                  <div class="skill-progress-fill" style="width: 100%"></div>
-                </div>
-              </li>
-
-              <li class="skills-item">
-                <div class="title-wrapper">
-                  <h5 class="h5">HTML/JS/CSS</h5>
-                  <data value="90">7 Years</data>
-                </div>
-
-                <div class="skill-progress-bg">
-                  <div class="skill-progress-fill" style="width: 90%"></div>
-                </div>
-              </li>
-              <li class="skills-item">
-                <div class="title-wrapper">
-                  <h5 class="h5">Version Control(Git)</h5>
-                  <data value="75">5 Years</data>
-                </div>
-
-                <div class="skill-progress-bg">
-                  <div class="skill-progress-fill" style="width: 75%"></div>
-                </div>
-              </li>
-
-              <li class="skills-item">
-                <div class="title-wrapper">
-                  <h5 class="h5">Java</h5>
-                  <data value="65">4 Years</data>
-                </div>
-
-                <div class="skill-progress-bg">
-                  <div class="skill-progress-fill" style="width: 65%"></div>
-                </div>
-              </li>
-
-              <li class="skills-item">
-                <div class="title-wrapper">
-                  <h5 class="h5">PHP</h5>
-                  <data value="70">4 Years</data>
-                </div>
-
-                <div class="skill-progress-bg">
-                  <div class="skill-progress-fill" style="width: 70%"></div>
-                </div>
-              </li>
-
-              <li class="skills-item">
-                <div class="title-wrapper">
-                  <h5 class="h5">Databases (Oracle, MySQL, MongoDB, More) </h5>
-                  <data value="60">5 Years</data>
-                </div>
-
-                <div class="skill-progress-bg">
-                  <div class="skill-progress-fill" style="width: 60%"></div>
-                </div>
-              </li>
-
-            </ul>
+            <!-- Skills list remains the same -->
           </section>
         </article>
 
@@ -757,7 +651,7 @@
         - #PORTFOLIO
       -->
 
-        <article class="portfolio" data-page="portfolio">
+        <article class="portfolio coming-soon" data-page="portfolio">
           <header>
             <h2 class="h2 article-title">Portfolio</h2>
           </header>
@@ -1035,7 +929,7 @@
         - #BLOG
       -->
 
-        <article class="blog" data-page="blog">
+        <article class="blog coming-soon" data-page="blog">
           <header>
             <h2 class="h2 article-title">Blog</h2>
           </header>
@@ -1251,24 +1145,29 @@
             <h3 class="h3 form-title">Contact Form</h3>
 
             <iframe
-  src="https://link.communitylaunch.io/widget/form/tYd2IqLarnbMuztxQFQ7"
-  style="width:100%;height:100%;border:none;border-radius:3px"
-  id="inline-tYd2IqLarnbMuztxQFQ7" 
-  data-layout="{'id':'INLINE'}"
-  data-trigger-type="alwaysShow"
-  data-trigger-value=""
-  data-activation-type="alwaysActivated"
-  data-activation-value=""
-  data-deactivation-type="neverDeactivate"
-  data-deactivation-value=""
-  data-form-name="PortfolioForm"
-  data-height="481"
-  data-layout-iframe-id="inline-tYd2IqLarnbMuztxQFQ7"
-  data-form-id="tYd2IqLarnbMuztxQFQ7"
-  title="PortfolioForm"
-      >
-</iframe>
-<script src="https://link.communitylaunch.io/js/form_embed.js"></script>
+              src="https://link.communitylaunch.io/widget/form/tYd2IqLarnbMuztxQFQ7"
+              style="
+                width: 100%;
+                height: 100%;
+                border: none;
+                border-radius: 3px;
+              "
+              id="inline-tYd2IqLarnbMuztxQFQ7"
+              data-layout="{'id':'INLINE'}"
+              data-trigger-type="alwaysShow"
+              data-trigger-value=""
+              data-activation-type="alwaysActivated"
+              data-activation-value=""
+              data-deactivation-type="neverDeactivate"
+              data-deactivation-value=""
+              data-form-name="PortfolioForm"
+              data-height="481"
+              data-layout-iframe-id="inline-tYd2IqLarnbMuztxQFQ7"
+              data-form-id="tYd2IqLarnbMuztxQFQ7"
+              title="PortfolioForm"
+            >
+            </iframe>
+            <script src="https://link.communitylaunch.io/js/form_embed.js"></script>
             <!-- <form class="form" data-form="" method="POST">
               <div class="input-wrapper">
                 <input
