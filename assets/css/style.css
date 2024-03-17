@@ -535,9 +535,9 @@ main {
   overflow: hidden;
 }
 
-@media (min-width: 450px) {
+@media (max-width: 767px) {
   .about-text p {
-    -webkit-line-clamp: 5; /* Adjust the number of lines as needed */
+    -webkit-line-clamp: 4; /* Adjust the number of lines as needed */
   }
 }
 
